@@ -5,4 +5,12 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <description>appli JEE pour jboss</description>
+  
+  
+  <properties>
+     <maven.compiler.target>1.8</maven.compiler.target>
+     <maven.compiler.source>1.8</maven.compiler.source>
+     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <failOnMissingWebXml>false</failOnMissingWebXml>
+  </properties>
 </project>
