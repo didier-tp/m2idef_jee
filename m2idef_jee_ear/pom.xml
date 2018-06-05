@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.m2i</groupId>
+    <artifactId>m2idef_jee</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>m2idef_jee_ear</artifactId>
+  
+ <packaging>ear</packaging>
+   <dependencies>
+   
+    <dependency>
+      <groupId>com.m2i</groupId>
+      <artifactId>m2idef_jee_ejb_itf</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <type>jar</type>       
+    </dependency>
+  
+  <dependency>
+      <groupId>com.m2i</groupId>
+      <artifactId>m2idef_jee_ejb_impl</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <type>ejb</type>       
+    </dependency>
+    
+    <dependency>
+      <groupId>com.m2i</groupId>
+      <artifactId>m2idef_jee_ejb_entity</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <type>ejb</type>       
+    </dependency>
+    
+    <dependency>
+      <groupId>com.m2i</groupId>
+      <artifactId>m2idef_jee_web</artifactId>
+      <version>0.0.1-SNAPSHOT</version> 
+      <type>war</type>     
+    </dependency>
+    
+  </dependencies>
+
+  <build>
+    <plugins>
+          
+      <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>3.0.1</version>
+				<configuration>
+					<generateApplicationXml>true</generateApplicationXml>
+					<includeJar>false</includeJar>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<modules>
+						<webModule>
+							<groupId>com.m2i</groupId>
+							<artifactId>m2idef_jee_web</artifactId>
+							<contextRoot>mm2idef_jee_web</contextRoot>
+							<bundleFileName>m2idef_jee_web.war</bundleFileName>
+						</webModule>
+						<jarModule>
+							<groupId>com.m2i</groupId>
+							<artifactId>m2idef_jee_ejb_itf</artifactId>
+							<bundleFileName>m2idef_jee_ejb_itf.jar</bundleFileName>
+						</jarModule>
+						<ejbModule>
+							<groupId>com.m2i</groupId>
+							<artifactId>m2idef_jee_ejb_impl</artifactId>
+							<bundleFileName>m2idef_jee_ejb_impl.jar</bundleFileName>
+						</ejbModule>
+						<ejbModule>
+							<groupId>com.m2i</groupId>
+							<artifactId>m2idef_jee_ejb_entity</artifactId>
+							<bundleFileName>m2idef_jee_ejb_entity.jar</bundleFileName>
+						</ejbModule>
+					</modules>	
+					<version>7</version>	<!-- 1.4 , 5 , 6 , 7-->			
+				</configuration>
+			</plugin>
+			
+		
+			
+      
+    </plugins>
+    <finalName>m2idef_jee_ear</finalName> <!-- .ear -->
+  </build>
+</project>

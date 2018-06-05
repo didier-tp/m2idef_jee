@@ -13,4 +13,13 @@
      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <failOnMissingWebXml>false</failOnMissingWebXml>
   </properties>
+  <modules>
+  	
+   <module>m2idef_jee_web</module>
+   <module>m2idef_jee_ejb_itf</module>
+   <module>m2idef_jee_ejb_entity</module>
+   <module>m2idef_jee_ejb_impl</module>
+   <module>m2idef_jee_ear</module>
+   <module>m2idef_jee_client</module>
+  </modules>
 </project>

@@ -1,0 +1,172 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.m2i</groupId>
+    <artifactId>m2idef_jee</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>m2idef_jee_ejb_impl</artifactId>
+  
+  <packaging>ejb</packaging>
+    
+  
+ <dependencies>
+ 
+  <dependency>
+    <groupId>com.m2i</groupId>
+    <artifactId>m2idef_jee_ejb_itf</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+     <scope>compile</scope>
+   </dependency>
+  
+  <!-- javax / javaee-api / 7.0 / provided : interfaces seulement (pour compiler) : ok pour test avec jboss 7 ou ... -->
+ 
+    
+    <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+    
+    
+    <!-- org.apache.openejb / javaee-api / 7.0.4 / provided : interfaces + implement : ok pour test avec OpenEjb -->
+    <!--  
+    <dependency>
+    	<groupId>org.apache.tomee</groupId>
+    	<artifactId>openejb-jee</artifactId>
+    	<version>7.0.4</version>
+	   <scope>provided</scope>
+  	</dependency>
+    -->
+    <!-- javaee-api 7 a la place de  org.apache.openejb:javaee-api:6 pour pax-exam -->
+        
+        
+        
+    		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.46</version>
+			<scope>test</scope>
+		</dependency>
+		
+		
+		
+     
+  
+    	<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		 
+		<dependency>
+    		<groupId>log4j</groupId>
+    		<artifactId>log4j</artifactId>
+    		<version>1.2.17</version>
+    	 <!-- scope>test</scope>	-->	
+		</dependency>
+		
+		<dependency>
+       	 <groupId>org.slf4j</groupId>
+       	 <artifactId>slf4j-api</artifactId>
+       	 <version>1.5.11</version>
+      	 <scope>provided</scope>  <!-- not provided for glassfish , provided for jboss wildfly -->
+    	</dependency>
+  
+    	<dependency>
+     	   <groupId>org.slf4j</groupId>
+       	 	<artifactId>slf4j-log4j12</artifactId>
+        	<version>1.5.11</version>
+        	<!-- <scope>test</scope> -->
+    	</dependency>
+    	
+
+    </dependencies>  
+    
+      
+    
+    
+  <build>
+    <plugins> 
+    
+    	
+                   
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ejb-plugin</artifactId> 
+        <version>3.0.1</version>
+        <configuration>
+          <!-- 
+        <archive>
+            <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+         -->
+        <ejbVersion>3.2</ejbVersion>
+        </configuration>
+      </plugin>
+      
+       <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>    
+          <configuration>
+                <!-- skip test a true par defaut et  a false dans profile test -->
+                <skip>true</skip> <!--  equivalent a mvn -Dmaven.test.skip=true -->
+          </configuration>    
+        </plugin>
+        
+        <!--  
+        <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.3</version>
+           <configuration>
+             <descriptor>src/main/assembly/dep.xml</descriptor>
+          </configuration>
+        </plugin>
+       --> 
+        
+    </plugins>
+    
+    <!--  
+     <resources>
+        <resource>
+	         <directory>src/main/resources</directory>
+	         <filtering>true</filtering>
+	     </resource>
+    </resources>
+    -->
+    <finalName>m2idef_jee_ejb_impl</finalName>
+  </build>
+  <!-- 
+  <profiles>
+  
+   <profile>
+    	<id>open-ejb-test</id>
+    	<activation>
+    		<activeByDefault>true</activeByDefault>
+    	</activation>
+    	<dependencies>
+    
+	 
+		<dependency>
+		      <groupId>org.apache.openejb</groupId>
+		      <artifactId>openejb-core</artifactId>
+		       <version>4.7.5</version> 
+		      <scope>test</scope>
+        </dependency>
+    
+      
+      <dependency>
+    		<groupId>org.hibernate</groupId>
+   			 <artifactId>hibernate-core</artifactId>
+    		<version>5.3.0.Final</version>
+		</dependency>
+    	
+    	
+    	</dependencies>
+   </profile>
+    
+  </profiles>
+  -->
+</project>
