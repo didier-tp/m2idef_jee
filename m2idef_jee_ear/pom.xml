@@ -55,7 +55,7 @@
 						<webModule>
 							<groupId>com.m2i</groupId>
 							<artifactId>m2idef_jee_web</artifactId>
-							<contextRoot>mm2idef_jee_web</contextRoot>
+							<contextRoot>m2idef_jee_web</contextRoot>
 							<bundleFileName>m2idef_jee_web.war</bundleFileName>
 						</webModule>
 						<jarModule>
