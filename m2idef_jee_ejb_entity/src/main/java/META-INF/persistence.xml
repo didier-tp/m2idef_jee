@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="myPersistenceUnitName"
+	    transaction-type="JTA">
+	    <!-- transaction-type="JTA" signifie transaction sophistiquée
+	         via l'api JTA=Java TransactionApi (avec EJB3) -->
+	    
+	    <!-- provider JPA (ex: Hibernate 4ou5 deja dans JBoss)  -->
+	     
+	     <!--  NB: java:jboss/datasources/FlightDSh2 est un JNDI-name de DataSource
+	           configuré dans standalone/configuration/standalone.xml de JBOSS_WILDFLY -->
+	     <jta-data-source>java:jboss/datasources/FlightDSh2</jta-data-source>   
+	     <!-- <jta-data-source>java:jboss/datasources/FlightDSmysql</jta-data-source> --> 
+	      
+	         <class>com.m2i.entity.Devise</class>
+	         <class>com.m2i.entity.Pays</class>
+	         
+	    <properties>
+             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+           <!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" /> -->
+	         
+ 			<property name="hibernate.hbm2ddl.auto" value="create" />
+ 			<!-- recréation des tables au demarrage + import.sql -->
+ 			
+ 			
+ 			<!-- proprietes avancees , facultatives , nouvelles de JPA 2.1
+ 			pour demander à generer create.sql et drop.sql pas parfaits 
+ 			et a generalement retoucher (a activer temporairement , bug )-->
+
+      <!-- 
+       <property name="javax.persistence.schema-generation.scripts.action" 
+                 value="drop-and-create"/>
+
+       <property name="javax.persistence.schema-generation.scripts.create-target"  
+                 value="src/main/script/generated/create.sql" />  
+
+       <property name="javax.persistence.schema-generation.scripts.drop-target"  
+                 value="src/main/script/generated/drop.sql" />	                               
+       -->
+	 
+	    </properties>
+	</persistence-unit>
+	
+	<!-- URL projet exemple (pour config) :
+	     https://github.com/didier-mycontrib/jee-jpa-hibernate  -->
+</persistence>

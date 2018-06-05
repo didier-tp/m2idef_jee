@@ -19,10 +19,21 @@ import com.m2i.service.IServiceDevise;
 public class DeviseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	@EJB //injection de dépendance (EJB 3) equivalent de @Autowired de Spring
+	@EJB //injection de dépendance (depuis EJB 3.0) equivalent de @Autowired de Spring
 	private IServiceDevise serviceDevise;
-       
-    
+     
+	/*
+    private void initialiserServiceDevise(){
+    	try {
+			InitialContext ctx = new InitialContext(); //JNDI
+			this.serviceDevise = (IServiceDevise) 
+					ctx.lookup( "java:app/m2idef_jee_ejb_impl/ServiceDeviseBean!com.m2i.service.IServiceDevise");
+			System.out.println("serviceDevise="+serviceDevise);
+		} catch (NamingException e) {
+			e.printStackTrace();
+		} 
+    }*/
+	
     public DeviseServlet() {
         super();
     }
@@ -31,6 +42,8 @@ public class DeviseServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		/*if(this.serviceDevise==null) 
+			initialiserServiceDevise();*/
 		double montant = Double.parseDouble(request.getParameter("montant"));
 		PrintWriter out = response.getWriter(); //objet technique pour générer réponse
 		response.setContentType("text/html");
