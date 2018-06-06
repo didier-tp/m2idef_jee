@@ -50,7 +50,7 @@ public class DeviseServlet extends HttpServlet {
 		out.println("<html><body>");
 		//on délègue un traitement à l'ejb (accès local dans meme JVM/jboss)
 		double res = this.serviceDevise.euroToFranc(montant);
-		out.println("res="+res);
+		out.println("res="+res + "<br/>");
 		
 		out.println("listeDevises="+serviceDevise.rechercherListeDevise());
 		
