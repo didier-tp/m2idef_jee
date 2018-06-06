@@ -18,6 +18,13 @@
     <version>0.0.1-SNAPSHOT</version>
      <scope>compile</scope>
    </dependency>
+   
+   <dependency>
+    <groupId>com.m2i</groupId>
+    <artifactId>m2idef_jee_ejb_entity</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+     <scope>provided</scope> <!-- paquet annexe d'EJB mis à disposition par jboss -->
+   </dependency>
   
   <!-- javax / javaee-api / 7.0 / provided : interfaces seulement (pour compiler) : ok pour test avec jboss 7 ou ... -->
  
