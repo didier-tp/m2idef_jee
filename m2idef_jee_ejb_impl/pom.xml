@@ -45,18 +45,23 @@
     	<version>7.0.4</version>
 	   <scope>provided</scope>
   	</dependency>
-    -->
-    <!-- javaee-api 7 a la place de  org.apache.openejb:javaee-api:6 pour pax-exam -->
+     -->  
         
         
         
-    		<dependency>
+    	<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.46</version>
 			<scope>test</scope>
 		</dependency>
 		
+		<dependency>
+    		<groupId>com.h2database</groupId>
+    		<artifactId>h2</artifactId>
+    		<version>1.4.197</version>
+    		<scope>test</scope>
+		</dependency>
 		
 		
      
@@ -145,13 +150,14 @@
     -->
     <finalName>m2idef_jee_ejb_impl</finalName>
   </build>
-  <!-- 
+  
   <profiles>
   
    <profile>
     	<id>open-ejb-test</id>
     	<activation>
-    		<activeByDefault>true</activeByDefault>
+    		 <activeByDefault>false</activeByDefault> 
+<!--     		<activeByDefault>true</activeByDefault> -->
     	</activation>
     	<dependencies>
     
@@ -175,5 +181,5 @@
    </profile>
     
   </profiles>
-  -->
+ 
 </project>

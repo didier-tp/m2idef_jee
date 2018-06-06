@@ -11,15 +11,15 @@
 	     
 	     <!--  NB: java:jboss/datasources/FlightDSh2 est un JNDI-name de DataSource
 	           configuré dans standalone/configuration/standalone.xml de JBOSS_WILDFLY -->
-	     <jta-data-source>java:jboss/datasources/FlightDSh2</jta-data-source>   
-	     <!-- <jta-data-source>java:jboss/datasources/FlightDSmysql</jta-data-source> --> 
+	     <jta-data-source>java:jboss/datasources/FlightDSh2</jta-data-source>  
+<!-- 	     <jta-data-source>java:jboss/datasources/FlightDSmysql</jta-data-source> -->
 	      
 	         <class>com.m2i.entity.Devise</class>
 	         <class>com.m2i.entity.Pays</class>
 	         
 	    <properties>
              <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
-           <!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" /> -->
+<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" /> -->
 	         
  			<property name="hibernate.hbm2ddl.auto" value="create" />
  			<!-- recréation des tables au demarrage + import.sql -->
