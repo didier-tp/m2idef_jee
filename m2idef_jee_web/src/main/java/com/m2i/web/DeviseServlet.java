@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.m2i.entity.Devise;
 import com.m2i.service.IServiceDevise;
 
 /**
@@ -51,9 +52,12 @@ public class DeviseServlet extends HttpServlet {
 		//on délègue un traitement à l'ejb (accès local dans meme JVM/jboss)
 		double res = this.serviceDevise.euroToFranc(montant);
 		out.println("res="+res + "<br/>");
-		
-		out.println("listeDevises="+serviceDevise.rechercherListeDevise());
-		
+		out.println("<u>listeDevises:</u><br/>");
+		out.println("<ul>");
+		for(Devise d : serviceDevise.rechercherListeDevise()){
+			out.println("<li>"+d.toString());
+		}
+		out.println("</ul>");
 		out.println("</body></html>");
 	}
 
