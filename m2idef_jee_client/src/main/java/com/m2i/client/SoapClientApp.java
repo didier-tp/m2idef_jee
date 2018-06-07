@@ -18,7 +18,7 @@ public class SoapClientApp {
 		String strWsdlUrl = 
 				"http://localhost:8080/m2idef_jee_ejb_impl/ServiceDeviseBean?WSDL";
 				//"http://172.28.11.5:8080/m2idef_jee_ejb_impl/ServiceDeviseBean?WSDL";
-		        //  "http://172.28.10.172:8080/m2idef_jee_ejb_impl/ServiceDeviseBean?WSDL";
+		        //"http://172.28.10.172:8080/m2idef_jee_ejb_impl/ServiceDeviseBean?WSDL";
 		URL urlWsdl = new URL(strWsdlUrl);
 		
 		IServiceDevise serviceProxy = 
@@ -26,7 +26,6 @@ public class SoapClientApp {
 
 		System.out.println("auteur="+serviceProxy.getAuteur());
 		System.out.println("15 euros="+serviceProxy.euroToFranc(15.0)+" francs");
-		
 	}
 
 }
