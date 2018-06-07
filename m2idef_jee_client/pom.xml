@@ -10,19 +10,21 @@
   <dependencies>
         <!--  pour se connecter à distance à Jboss
               de façon à effectuer des appels RMI vers EJB @Remote -->
+              
+		<!--		
 		<dependency>
 		    <groupId>org.jboss</groupId>
 		    <artifactId>jboss-ejb-client</artifactId>
 		    <version>4.0.10.Final</version>
 		</dependency>
+		-->
 		
-		<!-- 
 		<dependency>
     		<groupId>org.wildfly</groupId>
     		<artifactId>wildfly-client-all</artifactId>
     		<version>13.0.0.Final</version>
 		</dependency>
-		 -->
+		 
 		 
 		 <dependency>
     <groupId>com.m2i</groupId>

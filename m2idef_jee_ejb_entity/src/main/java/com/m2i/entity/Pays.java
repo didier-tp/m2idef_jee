@@ -1,5 +1,7 @@
 package com.m2i.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -8,7 +10,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Pays")
-public class Pays {
+public class Pays implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	private String codePays; //"fr", "es" , "de"
 	

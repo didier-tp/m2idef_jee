@@ -15,10 +15,17 @@ import javax.persistence.Table;
  */
 import javax.xml.bind.annotation.XmlType;
 
+//Les classes de données (@Entity ou ...) doivent être
+// "Serializable" pour pouvoir être vzhiculées à travers le réseau
+// via RMI .
+
 @Entity
 @Table(name="Devise")
-@XmlType(namespace="http://entity.m2i.com/")
+@XmlType(namespace="http://entity.m2i.com/") //pour SOAP
 public class Devise implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
 	@Column(length=6)//VARCHAR(6)
 	@Id//clef primaire
 	//@GeneratedValue(strategy=GenerationType.IDENTITY) pour auto_incr (impossible sur String)
