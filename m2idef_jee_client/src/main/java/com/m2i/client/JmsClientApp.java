@@ -40,7 +40,7 @@ public class JmsClientApp {
 			QueueSession session = cnn.createQueueSession(false,
 			QueueSession.AUTO_ACKNOWLEDGE);
 			TextMessage msg = session.createTextMessage();
-			msg.setText("<msg>message in the bottle</msg>");
+			msg.setText("<msg>message A in the bottle</msg>");
 			QueueSender sender = session.createSender(queue);
 			sender.send(msg);
 			System.out.println("Message sent successfully to remote queue.");
