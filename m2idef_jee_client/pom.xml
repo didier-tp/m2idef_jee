@@ -23,6 +23,20 @@
     		<version>13.0.0.Final</version>
 		</dependency>
 		 -->
+		 
+		 <dependency>
+    <groupId>com.m2i</groupId>
+    <artifactId>m2idef_jee_ejb_itf</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+     <scope>compile</scope>
+   </dependency>
+   
+   <dependency>
+    <groupId>com.m2i</groupId>
+    <artifactId>m2idef_jee_ejb_entity</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+     <scope>compile</scope>
+   </dependency>
   
   </dependencies>
   

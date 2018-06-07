@@ -12,7 +12,7 @@ import com.m2i.entity.Devise;
 //@Local déjà précisé sur l'interface
 @Stateless //EJB Session sans état (plus proche equivalent de @Service de Spring)
 @WebService(endpointInterface="com.m2i.service.IServiceDevise")
-public class ServiceDeviseBean implements IServiceDevise {
+public class ServiceDeviseBean implements IServiceDevise , IServiceDeviseRemote {
 
 	@EJB //injection de dépendance (comme @Autowired de Spring)
 	private IDaoDevise daoDevise;

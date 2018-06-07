@@ -9,6 +9,7 @@ import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
+import com.m2i.entity.Devise;
 
 
 /**
@@ -19,7 +20,8 @@ import javax.xml.ws.ResponseWrapper;
  */
 @WebService(name = "IServiceDevise", targetNamespace = "http://service.m2i.com/")
 @XmlSeeAlso({
-    ObjectFactory.class
+    com.m2i.entity.ObjectFactory.class,
+    com.m2i.service.ObjectFactory.class
 })
 public interface IServiceDevise {
 
@@ -41,7 +43,7 @@ public interface IServiceDevise {
     /**
      * 
      * @return
-     *     returns java.util.List<com.m2i.service.Devise>
+     *     returns java.util.List<com.m2i.entity.Devise>
      */
     @WebMethod
     @WebResult(targetNamespace = "")

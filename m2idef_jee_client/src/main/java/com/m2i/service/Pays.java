@@ -4,6 +4,7 @@ package com.m2i.service;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
+import com.m2i.entity.Devise;
 
 
 /**
@@ -17,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="codePays" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="devise" type="{http://service.m2i.com/}devise" minOccurs="0"/>
+ *         &lt;element name="devise" type="{http://entity.m2i.com/}devise" minOccurs="0"/>
  *         &lt;element name="nom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>

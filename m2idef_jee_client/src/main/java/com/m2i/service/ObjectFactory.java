@@ -123,14 +123,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Devise }
-     * 
-     */
-    public Devise createDevise() {
-        return new Devise();
-    }
-
-    /**
      * Create an instance of {@link Pays }
      * 
      */

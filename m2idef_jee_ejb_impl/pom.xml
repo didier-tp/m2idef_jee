@@ -26,45 +26,19 @@
      <scope>provided</scope> <!-- paquet annexe d'EJB mis à disposition par jboss -->
    </dependency>
   
-  <!-- javax / javaee-api / 7.0 / provided : interfaces seulement (pour compiler) : ok pour test avec jboss 7 ou ... -->
- 
-    
-    <dependency>
+   <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
-    
-    
-    <!-- org.apache.openejb / javaee-api / 7.0.4 / provided : interfaces + implement : ok pour test avec OpenEjb -->
-    <!--  
-    <dependency>
-    	<groupId>org.apache.tomee</groupId>
-    	<artifactId>openejb-jee</artifactId>
-    	<version>7.0.4</version>
-	   <scope>provided</scope>
-  	</dependency>
-     -->  
-        
-        
-        
-    	<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.46</version>
-			<scope>test</scope>
+  
+  <dependency>
+		    <groupId>org.jboss</groupId>
+		    <artifactId>jboss-ejb-client</artifactId>
+		    <version>4.0.10.Final</version>
+		    <scope>test</scope>
 		</dependency>
-		
-		<dependency>
-    		<groupId>com.h2database</groupId>
-    		<artifactId>h2</artifactId>
-    		<version>1.4.197</version>
-    		<scope>test</scope>
-		</dependency>
-		
-		
-     
   
     	<dependency>
 			<groupId>junit</groupId>
@@ -128,58 +102,13 @@
           </configuration>    
         </plugin>
         
-        <!--  
-        <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.3</version>
-           <configuration>
-             <descriptor>src/main/assembly/dep.xml</descriptor>
-          </configuration>
-        </plugin>
-       --> 
+       
         
     </plugins>
-    
-    <!--  
-     <resources>
-        <resource>
-	         <directory>src/main/resources</directory>
-	         <filtering>true</filtering>
-	     </resource>
-    </resources>
-    -->
+   
     <finalName>m2idef_jee_ejb_impl</finalName>
   </build>
   
-  <profiles>
   
-   <profile>
-    	<id>open-ejb-test</id>
-    	<activation>
-    		 <activeByDefault>false</activeByDefault> 
-<!--     		<activeByDefault>true</activeByDefault> -->
-    	</activation>
-    	<dependencies>
-    
-	 
-		<dependency>
-		      <groupId>org.apache.openejb</groupId>
-		      <artifactId>openejb-core</artifactId>
-		       <version>4.7.5</version> 
-		      <scope>test</scope>
-        </dependency>
-    
-      
-      <dependency>
-    		<groupId>org.hibernate</groupId>
-   			 <artifactId>hibernate-core</artifactId>
-    		<version>5.3.0.Final</version>
-		</dependency>
-    	
-    	
-    	</dependencies>
-   </profile>
-    
-  </profiles>
  
 </project>

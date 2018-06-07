@@ -5,7 +5,7 @@ import java.util.Properties;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
-import com.m2i.service.IServiceDevise;
+import com.m2i.service.IServiceDeviseRemote;
 
 public class RmiClientApp {
 
@@ -29,12 +29,12 @@ public class RmiClientApp {
 															// @Remote
 		Context jndiContext = new InitialContext(props);
 		String jndiName = "m2idef_jee_ear/m2idef_jee_ejb_impl/ServiceDeviseBean" 
-		                  + "!com.m2i.service.IServiceDevise";
+		                  + "!com.m2i.service.IServiceDeviseRemote";
 		// sans "ejb:" et sans // pour version de jndiName sans
 		// jboss-ejb-client.properties et sans
 		// props.setProperty(Context.URL_PKG_PREFIXES,"org.jboss.ejb.client.naming");
 		
-		IServiceDevise ejbServiceDevise = (IServiceDevise) 
+		IServiceDeviseRemote ejbServiceDevise = (IServiceDeviseRemote) 
 				                        jndiContext.lookup(jndiName);
 		System.out.println("30 euros= " +ejbServiceDevise.euroToFranc(30)+ " francs");
 

@@ -1,5 +1,6 @@
 package com.m2i.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -12,10 +13,12 @@ import javax.persistence.Table;
 /*
  * classe d'entité persitante prise en charge par JPA/Hibernate
  */
+import javax.xml.bind.annotation.XmlType;
 
 @Entity
 @Table(name="Devise")
-public class Devise {
+@XmlType(namespace="http://entity.m2i.com/")
+public class Devise implements Serializable {
 	@Column(length=6)//VARCHAR(6)
 	@Id//clef primaire
 	//@GeneratedValue(strategy=GenerationType.IDENTITY) pour auto_incr (impossible sur String)
