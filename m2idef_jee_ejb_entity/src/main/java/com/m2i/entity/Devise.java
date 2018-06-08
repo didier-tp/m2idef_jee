@@ -15,6 +15,8 @@ import javax.persistence.Table;
  */
 import javax.xml.bind.annotation.XmlType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 //Les classes de données (@Entity ou ...) doivent être
 // "Serializable" pour pouvoir être vzhiculées à travers le réseau
 // via RMI .
@@ -38,6 +40,7 @@ public class Devise implements Serializable {
 	private Double change; // change par rapport au dollar
 
 	@OneToMany(mappedBy="devise",fetch=FetchType.EAGER)
+	@JsonIgnore
 	private List<Pays> listePays; //avec get/set
 	
 	public Devise() {
